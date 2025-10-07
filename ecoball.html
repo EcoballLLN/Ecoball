@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecoball</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Bannière fixe */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background-color: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    header img {
+      position: absolute;
+      left: 15px;
+      height: 90px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    /* Section principale avec photo de fond */
+    main {
+      background: url("img/fond_raquette.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 100px;
+    }
+
+    /* Conteneur global */
+    .content-wrapper {
+      width: 90%;
+      max-width: 850px;
+      color: white;
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    /* Texte d’introduction */
+    .intro-text {
+    
+      background: rgba(0, 0, 0, 0.7);
+      padding: 25px 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      text-align: left;
+    }
+
+    .intro-text h2 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .intro-text p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .intro-text h3 {
+    
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #28a745;
+    }
+
+    /* Boîte tarif */
+    .tarif-box {
+      background: rgba(40, 167, 69, 0.9);
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* Formulaire */
+    .form-container {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 25px 35px;
+      border-radius: 12px;
+      width: 100%;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .form-container textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    .form-container button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #28a745;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .form-container button:hover {
+      background: #218838;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bannière -->
+  <header>
+    <img src="img/logo_ecoball.jpeg" alt="Logo Ecoball">
+    <h1>Ecoball</h1>
+  </header>
+
+  <!-- Contenu principal -->
+  <main>
+    <div class="content-wrapper">
+
+      <!-- Zone de texte au-dessus du formulaire -->
+      <div class="intro-text">
+        <h2>Bienvenu chez Ecoball !</h2>
+        <p>
+          Le saviez-vous ? Les balles de padel usagées sont aujourd’hui soit détruites, soit stockées dans des conteneurs. 
+          Elles ne se décomposent pas naturellement et représentent donc une source importante de pollution.  
+          Pourtant, une grande partie de ces balles est encore fonctionnelle : elles ont seulement besoin d’un reconditionnement.
+        </p>
+
+        <h3>Notre offre</h3>
+        <p>
+          Chez <strong>Ecoball</strong>, nous regonflons les balles de padel usagées afin de leur redonner 
+          leurs performances d’origine. Après reconditionnement, elles sont prêtes à être utilisées à nouveau 
+          sur le terrain.  
+        </p>
+        <p>
+          Nos clients peuvent ainsi récupérer des <strong>boîtes de balles reconditionnées Ecoball</strong>, 
+          performantes et respectueuses de l’environnement.
+        </p>
+
+        <!-- Onglet tarif -->
+        <div class="tarif-box">
+          💰 Tarif : 1 boîte de balles Ecoball = <strong>5 €</strong>
+        </div>
+      </div>
+
+      <!-- Formulaire -->
+      <div class="form-container">
+        <h2>Contactez-nous</h2>
+        <form action="mailto:ecoball.contact@gmail.com" method="POST" enctype="text/plain">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
